@@ -1,0 +1,16 @@
+<resources>
+<string name="app_name">LaserTag</string>
+
+<string name="teamA">Team A</string>
+<string name="teamB">Team B</string>
+<string name="totalScore">Total Score: 0 Points</string>
+<string name="remainingLives">Remaining Lives: 20</string>
+<string name="johanna">Johanna</string>
+<string name="sina">Sina</string>
+<string name="kim">Kim</string>
+<string name="verena">Verena</string>
+<string name="hit">Hit</string>
+<string name="specialHit">Special Hit</string>
+<string name="newGame">New Game</string>
+<string name="personalScore">Scored: 0 Points</string>
+</resources>

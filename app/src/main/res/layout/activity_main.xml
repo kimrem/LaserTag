@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.example.android.lasertag.MainActivity">
+
+    <Button
+        style="@style/buttonNewGame"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/margin_right"
+        android:onClick="resetScore"
+        android:text="@string/newGame" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/teamName"
+                android:padding="@dimen/standard_padding"
+                android:text="@string/teamA" />
+
+            <TextView
+                android:id="@+id/score_team_a"
+                style="@style/scoresAndLives"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:text="@string/totalScore" />
+
+            <TextView
+                android:id="@+id/lives_team_a"
+                style="@style/scoresAndLives"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:text="@string/remainingLives" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_marginTop="@dimen/margin_top">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/playerImages"
+                        android:src="@drawable/johanna" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/names"
+                            android:text="@string/johanna" />
+
+                        <TextView
+                            android:id="@+id/score_johanna"
+                            style="@style/personalScore"
+                            android:text="@string/personalScore" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/playerImages"
+                        android:src="@drawable/sina" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            style="@style/names"
+                            android:text="@string/sina" />
+
+                        <TextView
+                            android:id="@+id/score_sina"
+                            style="@style/personalScore"
+                            android:text="@string/personalScore" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/buttons"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/buttons"
+                    android:layout_weight="1"
+                    android:onClick="hitForTeamAJohanna"
+                    android:text="@string/hit" />
+
+                <Button
+                    style="@style/buttons"
+                    android:layout_weight="1"
+                    android:onClick="hitForTeamASina"
+                    android:text="@string/hit" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/buttons"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/buttons"
+                    android:layout_weight="1"
+                    android:onClick="specialhitForTeamAJohanna"
+                    android:text="@string/specialHit" />
+
+                <Button
+                    style="@style/buttons"
+                    android:layout_weight="1"
+                    android:onClick="specialhitForTeamASina"
+                    android:text="@string/specialHit" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right"
+            android:background="@color/writing" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/teamName"
+                android:padding="@dimen/standard_padding"
+                android:text="@string/teamB" />
+
+            <TextView
+                android:id="@+id/score_team_b"
+                style="@style/scoresAndLives"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:text="@string/totalScore" />
+
+            <TextView
+                android:id="@+id/lives_team_b"
+                style="@style/scoresAndLives"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:text="@string/remainingLives" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_marginTop="@dimen/margin_top">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/playerImages"
+                        android:src="@drawable/kim" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/names"
+                            android:text="@string/kim" />
+
+                        <TextView
+                            android:id="@+id/score_kim"
+                            style="@style/personalScore"
+                            android:text="@string/personalScore" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/playerImages"
+                        android:src="@drawable/verena" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/names"
+                            android:text="@string/verena" />
+
+                        <TextView
+                            android:id="@+id/score_verena"
+                            style="@style/personalScore"
+                            android:text="@string/personalScore" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/buttons"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/buttons"
+                    android:layout_weight="1"
+                    android:onClick="hitForTeamBKim"
+                    android:text="@string/hit" />
+
+                <Button
+                    style="@style/buttons"
+                    android:layout_weight="1"
+                    android:onClick="hitForTeamBVerena"
+                    android:text="@string/hit" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/buttons"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_marginBottom="@dimen/margin_bottom_2"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/buttons"
+                    android:layout_weight="1"
+                    android:onClick="specialHitForTeamBKim"
+                    android:text="@string/specialHit" />
+
+                <Button
+                    style="@style/buttons"
+                    android:layout_weight="1"
+                    android:onClick="specialHitForTeamBVerena"
+                    android:text="@string/specialHit" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

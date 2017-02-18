@@ -1,0 +1,66 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Primary theme color of the app (sets background color of app bar) -->
+        <item name="colorPrimary">#424242</item>
+        <item name="android:statusBarColor">@color/writing</item>
+        <item name="android:navigationBarColor">@color/writing</item>
+        <!-- Background color of buttons in the app -->
+        <item name="colorButtonNormal">@color/colorButton</item>
+    </style>
+
+    <style name="scoresAndLives">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/writing</item>
+        <item name="android:textSize">@dimen/textSize_big</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="personalScore">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/writing</item>
+        <item name="android:textSize">@dimen/textSize_medium</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="teamName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/writing</item>
+        <item name="android:textSize">@dimen/textSize_big</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="names">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/writing</item>
+        <item name="android:textSize">@dimen/textSize_big</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="buttons">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="buttonNewGame">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/writing</item>
+    </style>
+
+    <style name="playerImages">
+        <item name="android:layout_height">@dimen/width_image</item>
+        <item name="android:layout_width">@dimen/height_image</item>
+    </style>
+
+</resources>
