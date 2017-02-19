@@ -6,6 +6,8 @@ import android.text.style.UpdateLayout;
 import android.view.View;
 import android.widget.TextView;
 
+import static android.R.id.message;
+
 public class MainActivity extends AppCompatActivity {
 
     int scoreTeamA = 0;
@@ -38,80 +40,95 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
+        if (savedInstanceState != null) {
+            scoreTeamA = savedInstanceState.getInt("ScoreTeamA");
+            scoreTeamB = savedInstanceState.getInt("ScoreTeamB");
+            scoreTeamAJohanna = savedInstanceState.getInt("ScoreTeamAJohanna");
+            scoreTeamASina = savedInstanceState.getInt("ScoreTeamASina");
+            scoreTeamBKim = savedInstanceState.getInt("ScoreTeamBKim");
+            scoreTeamBVerena = savedInstanceState.getInt("ScoreTeamBVerena");
+            livesTeamA = savedInstanceState.getInt("LivesTeamA");
+            livesTeamB = savedInstanceState.getInt("LivesTeamB");
+            displayScoreForTeamA(scoreTeamA);
+            displayScoreForTeamB(scoreTeamB);
+            displayScoreForTeamAJohanna(scoreTeamAJohanna);
+            displayScoreForTeamASina(scoreTeamASina);
+            displayScoreForTeamBKim(scoreTeamBKim);
+            displayScoreForTeamBVerena(scoreTeamBVerena);
+            displayLivesForTeamA(livesTeamA);
+            displayLivesForTeamB(livesTeamB);
+        }
         super.onRestoreInstanceState(savedInstanceState);
-        scoreTeamA = savedInstanceState.getInt("ScoreTeamA");
-        scoreTeamB = savedInstanceState.getInt("ScoreTeamB");
-        scoreTeamAJohanna = savedInstanceState.getInt("ScoreTeamAJohanna");
-        scoreTeamASina = savedInstanceState.getInt("ScoreTeamASina");
-        scoreTeamBKim = savedInstanceState.getInt("ScoreTeamBKim");
-        scoreTeamBVerena = savedInstanceState.getInt("ScoreTeamBVerena");
-        livesTeamA = savedInstanceState.getInt("LivesTeamA");
-        livesTeamB = savedInstanceState.getInt("LivesTeamB");
     }
 
     /**
      * Displays the given score for Team A
      */
-    private void displayScoreForTeamA(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.score_team_a);
-        priceTextView.setText(message);
+    private void displayScoreForTeamA(int scoreA) {
+        String showScoreTeamA = "Total score: " + scoreA + " Points";
+        TextView scoreBTextView = (TextView) findViewById(R.id.score_team_a);
+        scoreBTextView.setText(showScoreTeamA);
     }
 
     /**
      * Displays the given score for Johanna in Team A
      */
-    private void displayScoreForTeamAJohanna(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.score_johanna);
-        priceTextView.setText(message);
+    private void displayScoreForTeamAJohanna(int scoreJohanna) {
+        String showScoreTeamAJohanna = "Scored: " + scoreJohanna + " Points";
+        TextView scoreTeamAJohannaTextView = (TextView) findViewById(R.id.score_johanna);
+        scoreTeamAJohannaTextView.setText(showScoreTeamAJohanna);
     }
 
     /**
      * Displays the given score for Sina in Team A
      */
-    private void displayScoreForTeamASina(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.score_sina);
-        priceTextView.setText(message);
+    private void displayScoreForTeamASina(int scoreSina) {
+        String showScoreTeamASina = "Scored: " + scoreSina + " Points";
+        TextView scoreTeamASinaTextView = (TextView) findViewById(R.id.score_sina);
+        scoreTeamASinaTextView.setText(showScoreTeamASina);
     }
 
     /**
      * Displays the given score for Team B
      */
-    private void displayScoreForTeamB(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.score_team_b);
-        priceTextView.setText(message);
+    private void displayScoreForTeamB(int scoreB) {
+        String showScoreTeamB = "Total score: " + scoreB + " Points";
+        TextView scoreBTextView = (TextView) findViewById(R.id.score_team_b);
+        scoreBTextView.setText(showScoreTeamB);
     }
 
     /**
      * Displays the given score for Kim in Team B
      */
-    private void displayScoreForTeamBKim(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.score_kim);
-        priceTextView.setText(message);
+    private void displayScoreForTeamBKim(int scoreKim) {
+        String showScoreTeamBKim = "Scored: " + scoreKim + " Points";
+        TextView scoreTeamBKimTextView = (TextView) findViewById(R.id.score_kim);
+        scoreTeamBKimTextView.setText(showScoreTeamBKim);
     }
 
     /**
      * Displays the given score for Verena in Team B
      */
-    private void displayScoreForTeamBVerena(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.score_verena);
-        priceTextView.setText(message);
+
+    private void displayScoreForTeamBVerena(int scoreVerena) {
+        String showScoreTeamBVerena = "Scored: " + scoreVerena + " Points";
+        TextView scoreTeamBVerenaTextView = (TextView) findViewById(R.id.score_verena);
+        scoreTeamBVerenaTextView.setText(showScoreTeamBVerena);
     }
 
-
-    /**
-     * Displays the remaining lives for Team A.
-     */
-    private void displayLivesForTeamA(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.lives_team_a);
-        priceTextView.setText(message);
+    private void displayLivesForTeamA(int lives) {
+        String showLivesForTeamA = "Remaining lives: " + lives;
+        TextView teamALivesTextView = (TextView) findViewById(R.id.lives_team_a);
+        teamALivesTextView.setText(showLivesForTeamA);
     }
 
     /**
      * Displays the remaining lives for Team B.
      */
-    private void displayLivesForTeamB(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.lives_team_b);
-        priceTextView.setText(message);
+    private void displayLivesForTeamB(int lives) {
+        String showLivesForTeamB = "Remaining lives: " + lives;
+        TextView teamBLivesTextView = (TextView) findViewById(R.id.lives_team_b);
+        teamBLivesTextView.setText(showLivesForTeamB);
     }
 
 
@@ -122,12 +139,9 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamA = scoreTeamA + 10;
         livesTeamB = livesTeamB - 1;
         scoreTeamAJohanna = scoreTeamAJohanna +10;
-        String showScoreTeamA = "Total score: " + scoreTeamA + " Points";
-        String showLivesForTeamB = "Remaining lives: " + livesTeamB;
-        String showScoreTeamAJohanna = "Scored: " + scoreTeamAJohanna + " Points";
-        displayLivesForTeamB(showLivesForTeamB);
-        displayScoreForTeamA(showScoreTeamA);
-        displayScoreForTeamAJohanna(showScoreTeamAJohanna);
+        displayLivesForTeamB(livesTeamB);
+        displayScoreForTeamA(scoreTeamA);
+        displayScoreForTeamAJohanna(scoreTeamAJohanna);
     }
 
     /**
@@ -137,12 +151,9 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamA = scoreTeamA + 10;
         livesTeamB = livesTeamB - 1;
         scoreTeamASina = scoreTeamASina +10;
-        String showScoreTeamA = "Total score: " + scoreTeamA + " Points";
-        String showLivesForTeamB = "Remaining lives: " + livesTeamB;
-        String showScoreTeamASina = "Scored: " + scoreTeamASina + " Points";
-        displayLivesForTeamB(showLivesForTeamB);
-        displayScoreForTeamA(showScoreTeamA);
-        displayScoreForTeamASina(showScoreTeamASina);
+        displayLivesForTeamB(livesTeamB);
+        displayScoreForTeamA(scoreTeamA);
+        displayScoreForTeamASina(scoreTeamASina);
     }
 
     /**
@@ -152,12 +163,9 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamA = scoreTeamA + 15;
         livesTeamB = livesTeamB - 1;
         scoreTeamAJohanna = scoreTeamAJohanna +15;
-        String showScoreTeamA = "Total score: " + scoreTeamA + " Points";
-        String showLivesForTeamB = "Remaining lives: " + livesTeamB;
-        String showScoreTeamAJohanna = "Scored: " + scoreTeamAJohanna + " Points";
-        displayLivesForTeamB(showLivesForTeamB);
-        displayScoreForTeamA(showScoreTeamA);
-        displayScoreForTeamAJohanna(showScoreTeamAJohanna);
+        displayLivesForTeamB(livesTeamB);
+        displayScoreForTeamA(scoreTeamA);
+        displayScoreForTeamAJohanna(scoreTeamAJohanna);
     }
 
     /**
@@ -167,12 +175,9 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamA = scoreTeamA + 15;
         livesTeamB = livesTeamB - 1;
         scoreTeamASina = scoreTeamASina +15;
-        String showScoreTeamA = "Total score: " + scoreTeamA + " Points";
-        String showLivesForTeamB = "Remaining lives: " + livesTeamB;
-        String showScoreTeamASina = "Scored: " + scoreTeamASina + " Points";
-        displayLivesForTeamB(showLivesForTeamB);
-        displayScoreForTeamA(showScoreTeamA);
-        displayScoreForTeamASina(showScoreTeamASina);
+        displayLivesForTeamB(livesTeamB);
+        displayScoreForTeamA(scoreTeamA);
+        displayScoreForTeamASina(scoreTeamASina);
     }
 
     /**
@@ -182,12 +187,9 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB = scoreTeamB + 10;
         livesTeamA = livesTeamA - 1;
         scoreTeamBKim = scoreTeamBKim +10;
-        String showScoreTeamB = "Total score: " + scoreTeamB + " Points";
-        String showLivesForTeamA = "Remaining lives: " + livesTeamA;
-        String showScoreTeamBKim = "Scored: " + scoreTeamBKim + " Points";
-        displayLivesForTeamA(showLivesForTeamA);
-        displayScoreForTeamB(showScoreTeamB);
-        displayScoreForTeamBKim(showScoreTeamBKim);
+        displayLivesForTeamA(livesTeamA);
+        displayScoreForTeamB(scoreTeamB);
+        displayScoreForTeamBKim(scoreTeamBKim);
     }
 
     /**
@@ -197,12 +199,9 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB = scoreTeamB + 10;
         livesTeamA = livesTeamA - 1;
         scoreTeamBVerena = scoreTeamBVerena +10;
-        String showScoreTeamB = "Total score: " + scoreTeamB + " Points";
-        String showLivesForTeamA = "Remaining lives: " + livesTeamA;
-        String showScoreTeamBVerena = "Scored: " + scoreTeamBVerena + " Points";
-        displayLivesForTeamA(showLivesForTeamA);
-        displayScoreForTeamB(showScoreTeamB);
-        displayScoreForTeamBVerena(showScoreTeamBVerena);
+        displayLivesForTeamA(livesTeamA);
+        displayScoreForTeamB(scoreTeamB);
+        displayScoreForTeamBVerena(scoreTeamBVerena);
     }
 
     /**
@@ -212,12 +211,9 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB = scoreTeamB + 15;
         livesTeamA = livesTeamA - 1;
         scoreTeamBKim = scoreTeamBKim +15;
-        String showScoreTeamB = "Total score: " + scoreTeamB + " Points";
-        String showLivesForTeamA = "Remaining lives: " + livesTeamA;
-        String showScoreTeamBKim = "Scored: " + scoreTeamBKim + " Points";
-        displayLivesForTeamA(showLivesForTeamA);
-        displayScoreForTeamB(showScoreTeamB);
-        displayScoreForTeamBKim(showScoreTeamBKim);
+        displayLivesForTeamA(livesTeamA);
+        displayScoreForTeamB(scoreTeamB);
+        displayScoreForTeamBKim(scoreTeamBKim);
     }
 
     /**
@@ -227,15 +223,10 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB = scoreTeamB + 15;
         livesTeamA = livesTeamA - 1;
         scoreTeamBVerena = scoreTeamBVerena +15;
-        String showScoreTeamB = "Total score: " + scoreTeamB + " Points";
-        String showLivesForTeamA = "Remaining lives: " + livesTeamA;
-        String showScoreTeamBVerena = "Scored: " + scoreTeamBVerena + " Points";
-        displayLivesForTeamA(showLivesForTeamA);
-        displayScoreForTeamB(showScoreTeamB);
-        displayScoreForTeamBVerena(showScoreTeamBVerena);
+        displayLivesForTeamA(livesTeamA);
+        displayScoreForTeamB(scoreTeamB);
+        displayScoreForTeamBVerena(scoreTeamBVerena);
     }
-
-
 
     /**
      * Starts a new game and sets all value to the initial value
@@ -249,22 +240,14 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamBVerena = 0;
         livesTeamA = 20;
         livesTeamB = 20;
-        String showScoreTeamA = "Total score: " + scoreTeamA + " Points";
-        String showScoreTeamB = "Total score: " + scoreTeamB + " Points";
-        String showScoreTeamAJohanna = "Scored: " + scoreTeamAJohanna + " Points";
-        String showScoreTeamASina = "Scored: " + scoreTeamASina + " Points";
-        String showScoreTeamBKim = "Scored: " + scoreTeamBKim + " Points";
-        String showScoreTeamBVerena = "Scored: " + scoreTeamBVerena + " Points";
-        String showLivesForTeamA = "Remaining lives: " + livesTeamA;
-        String showLivesForTeamB = "Remaining lives: " + livesTeamB;
-        displayScoreForTeamA(showScoreTeamA);
-        displayScoreForTeamB(showScoreTeamB);
-        displayScoreForTeamAJohanna(showScoreTeamAJohanna);
-        displayScoreForTeamASina(showScoreTeamASina);
-        displayScoreForTeamBKim(showScoreTeamBKim);
-        displayScoreForTeamBVerena(showScoreTeamBVerena);
-        displayLivesForTeamA(showLivesForTeamA);
-        displayLivesForTeamB(showLivesForTeamB);
+        displayScoreForTeamA(scoreTeamA);
+        displayScoreForTeamB(scoreTeamB);
+        displayScoreForTeamAJohanna(scoreTeamAJohanna);
+        displayScoreForTeamASina(scoreTeamASina);
+        displayScoreForTeamBKim(scoreTeamBKim);
+        displayScoreForTeamBVerena(scoreTeamBVerena);
+        displayLivesForTeamA(livesTeamA);
+        displayLivesForTeamB(livesTeamB);
     }
 
 }
