@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.style.UpdateLayout;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static android.R.id.message;
 
@@ -137,18 +138,26 @@ public class MainActivity extends AppCompatActivity {
      */
     public void hitForTeamAJohanna(View v) {
         scoreTeamA = scoreTeamA + 10;
-        livesTeamB = livesTeamB - 1;
-        scoreTeamAJohanna = scoreTeamAJohanna +10;
-        displayLivesForTeamB(livesTeamB);
-        displayScoreForTeamA(scoreTeamA);
-        displayScoreForTeamAJohanna(scoreTeamAJohanna);
-    }
+        if (livesTeamB == 0) {
+            //toast Message
+            Toast.makeText(this, "You cannot have less then 0 lives. Game over for Team B", Toast.LENGTH_SHORT).show();
+            return;}
+            livesTeamB = livesTeamB - 1;
+            scoreTeamAJohanna = scoreTeamAJohanna + 10;
+            displayLivesForTeamB(livesTeamB);
+            displayScoreForTeamA(scoreTeamA);
+            displayScoreForTeamAJohanna(scoreTeamAJohanna);
+        }
 
     /**
      * When Team A makes a hit it gets +10 points, Sina gets +10 Points
      */
     public void hitForTeamASina(View v) {
         scoreTeamA = scoreTeamA + 10;
+        if (livesTeamB == 0) {
+            //toast Message
+            Toast.makeText(this, "You cannot have less then 0 lives. Game over for Team B", Toast.LENGTH_SHORT).show();
+            return;}
         livesTeamB = livesTeamB - 1;
         scoreTeamASina = scoreTeamASina +10;
         displayLivesForTeamB(livesTeamB);
@@ -161,6 +170,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public void specialhitForTeamAJohanna(View v) {
         scoreTeamA = scoreTeamA + 15;
+        if (livesTeamB == 0) {
+            //toast Message
+            Toast.makeText(this, "You cannot have less then 0 lives. Game over for Team B", Toast.LENGTH_SHORT).show();
+            return;}
         livesTeamB = livesTeamB - 1;
         scoreTeamAJohanna = scoreTeamAJohanna +15;
         displayLivesForTeamB(livesTeamB);
@@ -173,6 +186,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public void specialhitForTeamASina(View v) {
         scoreTeamA = scoreTeamA + 15;
+        if (livesTeamB == 0) {
+            //toast Message
+            Toast.makeText(this, "You cannot have less then 0 lives. Game over for Team B", Toast.LENGTH_SHORT).show();
+            return;}
         livesTeamB = livesTeamB - 1;
         scoreTeamASina = scoreTeamASina +15;
         displayLivesForTeamB(livesTeamB);
@@ -185,6 +202,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public void hitForTeamBKim(View v) {
         scoreTeamB = scoreTeamB + 10;
+        if (livesTeamA == 0) {
+            //toast Message
+            Toast.makeText(this, "You cannot have less then 0 lives. Game over for Team A", Toast.LENGTH_SHORT).show();
+            return;}
         livesTeamA = livesTeamA - 1;
         scoreTeamBKim = scoreTeamBKim +10;
         displayLivesForTeamA(livesTeamA);
@@ -197,6 +218,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public void hitForTeamBVerena(View v) {
         scoreTeamB = scoreTeamB + 10;
+        if (livesTeamA == 0) {
+            //toast Message
+            Toast.makeText(this, "You cannot have less then 0 lives. Game over for Team A", Toast.LENGTH_SHORT).show();
+            return;}
         livesTeamA = livesTeamA - 1;
         scoreTeamBVerena = scoreTeamBVerena +10;
         displayLivesForTeamA(livesTeamA);
@@ -209,6 +234,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public void specialHitForTeamBKim(View v) {
         scoreTeamB = scoreTeamB + 15;
+        if (livesTeamA == 0) {
+            //toast Message
+            Toast.makeText(this, "You cannot have less then 0 lives. Game over for Team A", Toast.LENGTH_SHORT).show();
+            return;}
         livesTeamA = livesTeamA - 1;
         scoreTeamBKim = scoreTeamBKim +15;
         displayLivesForTeamA(livesTeamA);
@@ -221,6 +250,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public void specialHitForTeamBVerena(View v) {
         scoreTeamB = scoreTeamB + 15;
+        if (livesTeamA == 0) {
+            //toast Message
+            Toast.makeText(this, "You cannot have less then 0 lives. Game over for Team A", Toast.LENGTH_SHORT).show();
+            return;}
         livesTeamA = livesTeamA - 1;
         scoreTeamBVerena = scoreTeamBVerena +15;
         displayLivesForTeamA(livesTeamA);
